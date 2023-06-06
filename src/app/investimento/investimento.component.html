@@ -1,0 +1,35 @@
+<div class="uk-flex-center uk-margin-top" uk-grid>
+    <div class="uk-width-1-3@m">
+
+        <div>
+            <h3>Simulação Investimento</h3>
+
+            <div>
+                <label for="userId">Valor</label>
+                <input id="userId" class="uk-input uk-form-large" type="number" placeholder="Valor" [(ngModel)]="valor">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="parcelas">Parcelas</label>
+                <input id="userId" class="uk-input uk-form-large" type="number" placeholder="Parcelas" [(ngModel)]="parcelas">
+            </div>
+
+            <br>
+
+            <div>
+                <a href="javascript:void(0);" class="uk-button uk-button-default" (click)="realizarSimulacao()">Simular</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div style="margin-left: 420px" *ngIf="resultado">
+    Valor: {{resultado.valorDoEmprestimo | currency: 'BRL'}} <br>
+    Parcelas: {{resultado.numeroDeParcelas}} <br>
+    Valor Final: {{resultado.valorFinal | currency: 'BRL'}}
+</div>
